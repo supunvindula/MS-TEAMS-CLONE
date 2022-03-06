@@ -2,6 +2,7 @@ import { Component, OnInit,Input } from '@angular/core';
 import '@cds/core/icon/register.js';
 import { ClarityIcons, ellipsisHorizontalIcon } from '@cds/core/icon';
 import { HttpClient } from "@angular/common/http";
+import {GlobalComponent} from './../../global-component';
 ClarityIcons.addIcons(ellipsisHorizontalIcon);
 
 @Component({
@@ -41,7 +42,7 @@ export class MymessageComponent implements OnInit {
     }
   }
   deleteMessage(){
-    const deleteURL = "https://localhost:44327/api/Messages/7/1/"+String(this.messageId);
+    const deleteURL = GlobalComponent.URL+ "api/Messages/7/1/"+String(this.messageId);
     this.http.delete(deleteURL)
         .subscribe();
     this.opened=false

@@ -3,7 +3,7 @@ import '@cds/core/icon/register.js';
 import { ClarityIcons, textIcon,paperclipIcon,happyFaceIcon,undoIcon,replayAllIcon,playIcon } from '@cds/core/icon';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
-
+import {GlobalComponent} from './../../global-component';
 
 ClarityIcons.addIcons(textIcon,paperclipIcon,happyFaceIcon,undoIcon,replayAllIcon,playIcon);
 @Component({
@@ -34,8 +34,9 @@ export class NewmessageComponent implements OnInit {
       "memberId": 1,
       "groupId": 7
     });
-    console.log(body);
-    this.httpClient.post<any>("https://localhost:44327/api/Messages",body,{headers:headers,}).subscribe();
+    //console.log(body);
+    const url = GlobalComponent.URL + "api/Messages";
+    this.httpClient.post<any>(url,body,{headers:headers,}).subscribe();
     // (res)=>console.log(res)
     this.message='';
 

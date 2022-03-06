@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import '@cds/core/icon/register.js';
 import { ClarityIcons, playIcon,windowCloseIcon } from '@cds/core/icon';
+import {GlobalComponent} from './../../global-component';
 
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
@@ -33,7 +34,7 @@ export class EditmessageComponent implements OnInit {
       "messageBody": this.editMsg,
       "created": this.datetime,
     });
-    const url:string = "https://localhost:44327/api/Messages/7/1/" + String(this.messageId);
+    const url:string = GlobalComponent.URL+ "api/Messages/7/1/" + String(this.messageId);
     this.httpClient.put<any>(url,body,{headers:headers,}).subscribe();
     this.hide = false;
   }
