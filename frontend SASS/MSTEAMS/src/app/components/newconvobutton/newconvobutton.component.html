@@ -1,0 +1,3 @@
+<hr class="solid">
+<button *ngIf="getSelected" (click)="clicked()" class="btn btn-primary newconvo"> <cds-icon shape="note" class="noteicon"></cds-icon>New Conversation</button>
+<div *ngIf="!getSelected"><app-newmessage></app-newmessage></div>

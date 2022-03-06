@@ -1,0 +1,16 @@
+<div class="main-container">
+    <app-header></app-header>
+    <div class="content-container">
+        <app-menubar></app-menubar>
+        <div class="teams">
+            <h1>Teams</h1>
+            <p>Your teams</p>
+            <div class="clr-row">
+                <app-teamcard [cardName]="names[0]"></app-teamcard>
+                <app-teamcard routerLink="/messages" [cardName]="names[1]" (click)="changeView()"></app-teamcard>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>

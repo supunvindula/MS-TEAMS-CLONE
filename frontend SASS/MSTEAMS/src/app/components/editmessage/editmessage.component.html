@@ -1,0 +1,14 @@
+<div class="modal" *ngIf="hide">
+    <div class="modal-dialog modal-md" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+          <button class="right btn btn-link" (click)="close()">
+            <cds-icon shape="window-close"></cds-icon>
+          </button>
+        <form >
+            <input class="msginput" placeholder="Type the new message " name="editMsg" [(ngModel)]="editMsg" />
+            <button class="btn btn-link" (click)="editMessage()">Edit<cds-icon shape="play" class="editicon" solid ></cds-icon></button>
+        </form>
+      </div>
+    </div>
+  </div>
+<div class="modal-backdrop" aria-hidden="true" *ngIf="hide"></div>

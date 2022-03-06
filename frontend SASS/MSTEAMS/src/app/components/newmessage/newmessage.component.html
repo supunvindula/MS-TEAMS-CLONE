@@ -1,0 +1,28 @@
+
+<div class="clr-row">
+    <div class="clr-col-12">
+      <div class="card">
+        <div class="card-header">
+            <div >
+                <form >
+                    <input class="msginput" placeholder="Start a new conversation" name="message" [(ngModel)]="message" />
+                </form>
+
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="left">
+                <cds-icon shape="text"></cds-icon>
+                <cds-icon shape="paperclip"></cds-icon>
+                <cds-icon shape="happy-face"></cds-icon>
+                <cds-icon shape="undo"></cds-icon>
+                <cds-icon shape="replay-all"></cds-icon>
+              <div class="right">
+                  <button [disabled]="!message"class="btn btn-link" (click)="sendMessage()"><cds-icon shape="play" solid ></cds-icon></button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>

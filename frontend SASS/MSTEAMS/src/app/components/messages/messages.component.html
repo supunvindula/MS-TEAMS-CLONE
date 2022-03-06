@@ -1,0 +1,8 @@
+<div class="messages" #scrollMe >
+    <ng-container *ngFor="let message of messages">
+        <app-message *ngIf="message.memberId!=1"  [name]="message.member.name" [message]="message.messageBody" [datetime]="message.created"></app-message>
+        <app-mymessage *ngIf="message.memberId==1"  [name]="message.member.name" [messageId]="message.id" [message]="message.messageBody" [datetime]="message.created"></app-mymessage>
+    </ng-container>
+</div>
+
+
